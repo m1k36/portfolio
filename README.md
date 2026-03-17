@@ -12,12 +12,18 @@ This repository contains the source code of my personal portfolio website.
 
 ```bash
 npm install
-npm run dev   # http://localhost:8080
+
+# Run in dev
+npm run dev   # http://localhost:3000
+
+# Run in production
+npm run build
+npm run start
 ```
 
 ## More
 
 This website is hosted on Vercel. \
-Feel free to look at it ! \
+Feel free to look at it !
 
 :>

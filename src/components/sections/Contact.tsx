@@ -14,7 +14,7 @@ export default function Contact({ dict }: Props) {
           <p className="text-zinc-400 max-w-xl mb-12">{dict.description}</p>
         </AnimateOnScroll>
 
-        <div className="flex flex-col gap-4 max-w-xl">
+        <div className="flex flex-col gap-4">
           {CONTACTS.map(({ icon: Icon, label, value, href }, i) => (
             <AnimateOnScroll key={label} delay={i * 100}>
               <a

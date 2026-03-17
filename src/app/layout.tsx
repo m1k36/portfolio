@@ -1,34 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "@/src/components/Header";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Piot Mike",
   description: "My personal portfolio",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />
-        {children}
-      </body>
-    </html>
-  );
+// html/body are rendered in [lang]/layout.tsx so the lang attribute is dynamic
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return children as React.ReactElement;
 }

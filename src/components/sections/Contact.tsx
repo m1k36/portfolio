@@ -1,52 +1,41 @@
-import AnimateOnScroll from "@/src/components/AnimateOnScroll";
+import AnimateOnScroll from "@/src/components/ui/AnimateOnScroll";
+import type { Dictionary } from "@/src/lib/i18n";
+import { CONTACTS } from "@/src/lib/constant";
 
-export default function Contact() {
+type Props = { dict: Dictionary["contact"] };
+
+export default function Contact({ dict }: Props) {
   return (
-    <section id="contact" className="py-24 px-6 bg-zinc-900/40">
-      <div className="max-w-5xl mx-auto text-center">
+    <section id="contact" className="min-h-screen flex items-center px-6">
+      <div className="max-w-5xl mx-auto w-full">
         <AnimateOnScroll delay={0}>
-          <p className="text-zinc-500 text-sm font-mono mb-3">04. Contact</p>
-          <h2 className="text-4xl font-bold mb-4">Let&apos;s work together</h2>
+          <p className="text-zinc-500 text-sm font-mono mb-3">{dict.label}</p>
+          <h2 className="text-4xl font-bold mb-4">{dict.title}</h2>
+          <p className="text-zinc-400 max-w-xl mb-12">{dict.description}</p>
         </AnimateOnScroll>
-        <AnimateOnScroll delay={100}>
-          <p className="text-zinc-400 max-w-md mx-auto mb-10">
-            Have a project in mind or just want to say hi? My inbox is always open.
-          </p>
-          <a
-            href="mailto:hello@piotmike.dev"
-            className="inline-block px-8 py-4 bg-white text-black rounded-lg text-sm font-medium hover:bg-zinc-200 transition-colors"
-          >
-            Say hello →
-          </a>
-        </AnimateOnScroll>
-        <AnimateOnScroll delay={200}>
-          <div className="flex justify-center gap-6 mt-12 text-zinc-500 text-sm">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              Twitter
-            </a>
-          </div>
-        </AnimateOnScroll>
+
+        <div className="flex flex-col gap-4 max-w-xl">
+          {CONTACTS.map(({ icon: Icon, label, value, href }, i) => (
+            <AnimateOnScroll key={label} delay={i * 100}>
+              <a
+                href={href}
+                target={href.startsWith("mailto") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 w-full bg-zinc-900 border border-zinc-800 rounded-xl px-6 py-5 hover:border-zinc-600 hover:bg-zinc-800/50 transition-colors group"
+              >
+                <Icon className="text-2xl text-zinc-400 group-hover:text-white transition-colors shrink-0" />
+                <div>
+                  <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-0.5">
+                    {label}
+                  </p>
+                  <p className="text-sm text-zinc-300 group-hover:text-white transition-colors">
+                    {value}
+                  </p>
+                </div>
+              </a>
+            </AnimateOnScroll>
+          ))}
+        </div>
       </div>
     </section>
   );

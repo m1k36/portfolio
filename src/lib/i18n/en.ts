@@ -9,7 +9,7 @@ export const en = {
   },
   hero: {
     greeting: "Hello, I'm",
-    description: "Full-stack developer crafting clean, performant web experiences.",
+    description: "Full-stack web development student.",
   },
   about: {
     label: "01. About",
@@ -19,17 +19,17 @@ export const en = {
       {
         tag: "Role",
         title: "Web Developer",
-        text: "I design and build web applications end to end — polished interfaces, solid APIs, experiences crafted with users in mind.",
+        text: "I design and build web applications end to end — polished frontend interfaces, robust backend APIs, with a strong focus on user experience. Each project is an opportunity to find the right balance between design, performance and maintainability.",
       },
       {
         tag: "Who I am",
         title: "Piot Mike",
-        text: "CS student, curious and detail-oriented. I enjoy understanding how things work, both in code and in life.",
+        text: "CS student, curious and detail-oriented. I enjoy understanding how things work deeply, both in code and in life. I approach every challenge methodically, looking for simple solutions to sometimes complex problems.",
       },
       {
         tag: "Passions",
         title: "Code & Equestrianism",
-        text: "Development is as much a passion as a craft. Away from the screen, I ride horses — two disciplines that share patience, precision and perseverance.",
+        text: "Development is as much a passion as a craft — I love building, iterating, and watching ideas come to life. Away from the screen, I've been riding horses for several years. Both disciplines share more than it seems: patience, precision, perseverance, and the art of constantly adapting.",
       },
     ],
   },

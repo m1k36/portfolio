@@ -9,7 +9,7 @@ export const fr = {
   },
   hero: {
     greeting: "Bonjour, je suis",
-    description: "Développeur full-stack créant des expériences web propres et performantes.",
+    description: "Etudiant développeur full-stack en web.",
   },
   about: {
     label: "01. À propos",
@@ -19,17 +19,17 @@ export const fr = {
       {
         tag: "Métier",
         title: "Développeur web",
-        text: "Je conçois et développe des applications web de A à Z — interfaces soignées, APIs robustes, expériences pensées pour les utilisateurs.",
+        text: "Je conçois et développe des applications web de A à Z — interfaces soignées côté frontend, APIs robustes côté backend, et une attention particulière portée à l'expérience utilisateur. Chaque projet est une occasion de trouver le bon équilibre entre design, performance et maintenabilité.",
       },
       {
         tag: "Qui je suis",
         title: "Piot Mike",
-        text: "Étudiant en informatique, curieux et rigoureux. J'aime comprendre comment les choses fonctionnent, autant dans le code que dans la vie.",
+        text: "Étudiant en informatique, curieux et rigoureux. J'aime comprendre comment les choses fonctionnent en profondeur, autant dans le code que dans la vie. J'aborde chaque défi avec méthode, en cherchant des solutions simples à des problèmes parfois complexes.",
       },
       {
         tag: "Passions",
         title: "Code & Équitation",
-        text: "Le développement est autant une passion qu'un métier. En dehors de l'écran, je monte à cheval — deux disciplines qui demandent patience, précision et persévérance.",
+        text: "Le développement est autant une passion qu'un métier — j'aime construire, itérer et voir les idées prendre vie. En dehors de l'écran, je monte à cheval depuis plusieurs années. Ces deux disciplines partagent plus qu'il n'y paraît : patience, précision, persévérance, et l'art de s'adapter en permanence.",
       },
     ],
   },

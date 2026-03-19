@@ -28,7 +28,7 @@ export default function AboutRow({
     if (!hasMultiple) return;
     const timer = setTimeout(() => {
       setIndex((i) => (i + 1) % images.length);
-    }, 3000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, [index, images.length, hasMultiple]);
 

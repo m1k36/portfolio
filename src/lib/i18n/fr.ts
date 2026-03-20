@@ -60,44 +60,37 @@ export const fr = {
     title: "Travaux sélectionnés",
     items: [
       {
-        title: "Projet Alpha",
-        description:
-          "Plateforme SaaS full-stack avec collaboration en temps réel, construite avec Next.js et PostgreSQL.",
+        title: "Portfolio",
+        description: "Portfolio personnel pour présenter mes projets et compétences.",
         details:
-          "Ce projet consistait à architecturer une application SaaS multi-tenant scalable. Les défis principaux ont inclus la synchronisation en temps réel via WebSockets, la mise en place d'un système de permissions robuste et l'optimisation des requêtes pour les accès concurrents. La plateforme prend en charge l'édition collaborative de documents, le contrôle d'accès basé sur les rôles et la facturation automatisée via Stripe.",
-        link: "https://github.com/m1k36",
+          "Site web développé avec Next.js et TypeScript, hébergé sur Vercel. Permet de présenter mes réalisations, compétences et informations de contact de manière responsive et moderne. Interface fluide et design épuré, optimisé pour une navigation simple et rapide.",
+        link: "https://github.com/m1k36/portfolio",
+        tags: ["Next.js", "TypeScript", "Vercel"],
       },
       {
-        title: "Projet Beta",
-        description:
-          "Outil CLI open-source pour automatiser les workflows des développeurs. 500+ étoiles GitHub.",
+        title: "Tiktok bot",
+        description: "Générateur de vidéos TikTok story telling entièrement automatisé.",
         details:
-          "Un outil en ligne de commande développé en Node.js et TypeScript qui automatise des tâches répétitives telles que le scaffolding, le linting et les pipelines de déploiement. Le projet suit une architecture par plugins, facilitant son extension. Il a rencontré un fort intérêt dans la communauté open-source et a atteint 500+ étoiles sur GitHub en quelques mois.",
-        link: "https://github.com/m1k36",
+          "Projet Python capable de créer des vidéos de type story telling inspirées de Reddit. Utilise la synthèse vocale et la génération vidéo pour produire des contenus prêts à être publiés sur TikTok.",
+        link: "https://github.com/m1k36/tiktok-bot",
+        tags: ["Python", "MoviePy", "Edge-TTS"],
       },
       {
-        title: "Projet Gamma",
+        title: "Skyblock Utils",
         description:
-          "Boutique e-commerce avec CMS personnalisé, optimisée pour les Core Web Vitals.",
+          "Interface pour récupérer et afficher des informations du serveur Hypixel Skyblock.",
         details:
-          "Un front-end e-commerce performant développé avec React et Tailwind, intégrant un CMS headless pour la gestion des produits et un tunnel de paiement via Stripe. Une attention particulière a été portée aux performances : le site obtient un score Lighthouse parfait et respecte tous les seuils Core Web Vitals. Inclut le filtrage produit, la persistance du panier et un tableau de bord administrateur.",
-        link: "https://github.com/m1k36",
+          "Application Next.js qui permet aux joueurs de suivre les événements du jeu, comme les élections en cours et précédentes, ou le bingo du mois. Interface intuitive et responsive pour consulter facilement les informations importantes du serveur.",
+        link: "https://github.com/m1k36/skyblock-utils-m1k36",
+        tags: ["Next.js", "TypeScript", "Vercel"],
       },
       {
-        title: "Projet Delta",
-        description:
-          "API REST alimentant une application mobile avec plus de 10 000 utilisateurs actifs.",
+        title: "API Library",
+        description: "API REST pour gérer une bibliothèque (projet étudiant).",
         details:
-          "Une API REST de niveau production développée avec Node.js, conteneurisée avec Docker et utilisant Redis pour la mise en cache et la gestion des sessions. Conçue pour gérer une forte concurrence, l'API sert un client mobile avec plus de 10 000 utilisateurs actifs quotidiens. Elle inclut l'authentification JWT, la limitation de débit, le traitement de tâches en arrière-plan et une journalisation détaillée.",
-        link: "https://github.com/m1k36",
-      },
-      {
-        title: "Projet Epsilon",
-        description:
-          "Système de design et bibliothèque de composants utilisés dans 3 produits internes.",
-        details:
-          "Une bibliothèque de composants React partagée, développée avec Storybook et TypeScript, adoptée dans 3 produits internes. Le système standardise les patterns UI, applique les règles d'accessibilité et est livré avec des tests de régression visuelle automatisés. Chaque composant est entièrement documenté avec des exemples d'utilisation, des tableaux de props et des design tokens alignés avec la charte graphique.",
-        link: "https://github.com/m1k36",
+          "API développée avec Express et TypeScript pour permettre la communication avec une base de données afin de gérer les ressources d’une bibliothèque. Projet containerisé avec Docker pour faciliter le déploiement et les tests.",
+        link: "https://github.com/m1k36/api-library",
+        tags: ["Node.js", "Express", "Docker"],
       },
     ],
   },

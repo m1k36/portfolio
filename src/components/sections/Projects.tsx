@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/src/components/ui/accordion";
 import type { Dictionary } from "@/src/lib/i18n";
-import { PROJECT_TAGS, ICON_MAP } from "@/src/lib/constant";
+import { ICON_MAP } from "@/src/lib/constant";
 
 type Props = { dict: Dictionary["projects"] };
 
@@ -40,7 +40,7 @@ export default function Projects({ dict }: Props) {
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {PROJECT_TAGS[i]?.map((tag) => {
+                      {project.tags?.map((tag) => {
                         const Icon = ICON_MAP[tag];
                         return (
                           <span

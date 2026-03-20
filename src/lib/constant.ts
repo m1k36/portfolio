@@ -64,4 +64,3 @@ export const CONTACTS = [
     href: "https://www.linkedin.com/in/mike-piot-15a917336/",
   },
 ];
-

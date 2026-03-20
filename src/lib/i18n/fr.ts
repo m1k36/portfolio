@@ -63,26 +63,41 @@ export const fr = {
         title: "Projet Alpha",
         description:
           "Plateforme SaaS full-stack avec collaboration en temps réel, construite avec Next.js et PostgreSQL.",
+        details:
+          "Ce projet consistait à architecturer une application SaaS multi-tenant scalable. Les défis principaux ont inclus la synchronisation en temps réel via WebSockets, la mise en place d'un système de permissions robuste et l'optimisation des requêtes pour les accès concurrents. La plateforme prend en charge l'édition collaborative de documents, le contrôle d'accès basé sur les rôles et la facturation automatisée via Stripe.",
+        link: "https://github.com/m1k36",
       },
       {
         title: "Projet Beta",
         description:
           "Outil CLI open-source pour automatiser les workflows des développeurs. 500+ étoiles GitHub.",
+        details:
+          "Un outil en ligne de commande développé en Node.js et TypeScript qui automatise des tâches répétitives telles que le scaffolding, le linting et les pipelines de déploiement. Le projet suit une architecture par plugins, facilitant son extension. Il a rencontré un fort intérêt dans la communauté open-source et a atteint 500+ étoiles sur GitHub en quelques mois.",
+        link: "https://github.com/m1k36",
       },
       {
         title: "Projet Gamma",
         description:
           "Boutique e-commerce avec CMS personnalisé, optimisée pour les Core Web Vitals.",
+        details:
+          "Un front-end e-commerce performant développé avec React et Tailwind, intégrant un CMS headless pour la gestion des produits et un tunnel de paiement via Stripe. Une attention particulière a été portée aux performances : le site obtient un score Lighthouse parfait et respecte tous les seuils Core Web Vitals. Inclut le filtrage produit, la persistance du panier et un tableau de bord administrateur.",
+        link: "https://github.com/m1k36",
       },
       {
         title: "Projet Delta",
         description:
           "API REST alimentant une application mobile avec plus de 10 000 utilisateurs actifs.",
+        details:
+          "Une API REST de niveau production développée avec Node.js, conteneurisée avec Docker et utilisant Redis pour la mise en cache et la gestion des sessions. Conçue pour gérer une forte concurrence, l'API sert un client mobile avec plus de 10 000 utilisateurs actifs quotidiens. Elle inclut l'authentification JWT, la limitation de débit, le traitement de tâches en arrière-plan et une journalisation détaillée.",
+        link: "https://github.com/m1k36",
       },
       {
         title: "Projet Epsilon",
         description:
           "Système de design et bibliothèque de composants utilisés dans 3 produits internes.",
+        details:
+          "Une bibliothèque de composants React partagée, développée avec Storybook et TypeScript, adoptée dans 3 produits internes. Le système standardise les patterns UI, applique les règles d'accessibilité et est livré avec des tests de régression visuelle automatisés. Chaque composant est entièrement documenté avec des exemples d'utilisation, des tableaux de props et des design tokens alignés avec la charte graphique.",
+        link: "https://github.com/m1k36",
       },
     ],
   },

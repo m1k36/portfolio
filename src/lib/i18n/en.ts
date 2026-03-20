@@ -63,22 +63,37 @@ export const en = {
         title: "Project Alpha",
         description:
           "A full-stack SaaS platform with real-time collaboration, built with Next.js and PostgreSQL.",
+        details:
+          "This project involved architecting a scalable multi-tenant SaaS application. Key challenges included implementing real-time sync with WebSockets, building a robust permission system, and optimizing database queries for concurrent users. The platform supports live document editing, role-based access control, and automated billing via Stripe.",
+        link: "https://github.com/m1k36",
       },
       {
         title: "Project Beta",
         description: "Open-source CLI tool for automating developer workflows. 500+ GitHub stars.",
+        details:
+          "A command-line tool built in Node.js and TypeScript that automates repetitive dev tasks such as scaffolding, linting, and deployment pipelines. The project follows a plugin architecture, making it easy to extend. It gained traction in the open-source community and reached 500+ stars on GitHub within a few months of release.",
+        link: "https://github.com/m1k36",
       },
       {
         title: "Project Gamma",
         description: "E-commerce storefront with custom CMS, optimized for Core Web Vitals.",
+        details:
+          "A performant e-commerce front-end built with React and Tailwind, featuring a headless CMS for product management and a Stripe-integrated checkout flow. Special attention was paid to performance: the site achieves a perfect Lighthouse score and passes all Core Web Vitals thresholds. Includes product filtering, cart persistence, and an admin dashboard.",
+        link: "https://github.com/m1k36",
       },
       {
         title: "Project Delta",
         description: "REST API powering a mobile app with 10k+ active users.",
+        details:
+          "A production-grade REST API built with Node.js, containerized with Docker, and using Redis for caching and session management. Designed to handle high concurrency, the API serves a mobile client with 10k+ daily active users. Features include JWT authentication, rate limiting, background job processing, and detailed logging.",
+        link: "https://github.com/m1k36",
       },
       {
         title: "Project Epsilon",
         description: "Design system and component library used across 3 internal products.",
+        details:
+          "A shared React component library built with Storybook and TypeScript, adopted across 3 internal products. The system standardizes UI patterns, enforces accessibility guidelines, and ships with automated visual regression tests. Each component is fully documented with usage examples, props tables, and design tokens aligned with the brand guidelines.",
+        link: "https://github.com/m1k36",
       },
     ],
   },

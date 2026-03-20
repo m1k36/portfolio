@@ -36,7 +36,7 @@ export const en = {
       },
       {
         tag: "Passions",
-        title: "Equestrianism",
+        title: "Horse riding",
         photoCredit: {
           name: "Lemaire Laurent",
           url: "https://www.instagram.com/laurent_l.photographies?igsh=MThkOXdtank4cG5law==",

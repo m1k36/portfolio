@@ -17,19 +17,35 @@ export const en = {
     imagePlaceholder: "no image",
     cards: [
       {
-        tag: "Role",
-        title: "Web Developer",
-        text: "I design and build web applications end to end — polished frontend interfaces, robust backend APIs, with a strong focus on user experience. Each project is an opportunity to find the right balance between design, performance and maintainability.",
+        tag: "Profile",
+        title: "Who am I?",
+        text: [
+          "I'm Mike Piot, a developer with a particular interest in building web and software applications, with a focus on clean code and practical solutions.",
+          "Over time, I've gained experience with technologies like TypeScript, Python, and Java, through various projects where I've worked on both interfaces and backend logic.",
+          "I enjoy designing and developing reliable applications, whether it's working with data, building user interfaces, or putting together complete, efficient, and maintainable systems.",
+        ],
       },
       {
-        tag: "Who I am",
-        title: "Piot Mike",
-        text: "CS student, curious and detail-oriented. I enjoy understanding how things work deeply, both in code and in life. I approach every challenge methodically, looking for simple solutions to sometimes complex problems.",
+        tag: "Background",
+        title: "My journey",
+        text: [
+          "I got interested in computer science fairly early, back in high school, starting to learn on my own. At first, it was mostly curiosity: understanding how things work, testing, trying, sometimes getting it wrong, but always learning.",
+          "Over time, that interest turned into a desire to create. I gradually moved toward application development, particularly in web and software. I've worked with languages like Python, TypeScript, and Java, using them across various projects both in school and in professional or personal contexts. That helped me discover different ways to design applications and better structure my work.",
+          "Today, I enjoy working on concrete projects where I can really see the outcome of what I build. Whether it's applications, tools, or more complete systems, what drives me is building something useful, clean, and that holds up over time.",
+        ],
       },
       {
         tag: "Passions",
-        title: "Code & Equestrianism",
-        text: "Development is as much a passion as a craft — I love building, iterating, and watching ideas come to life. Away from the screen, I've been riding horses for several years. Both disciplines share more than it seems: patience, precision, perseverance, and the art of constantly adapting.",
+        title: "Equestrianism",
+        photoCredit: {
+          name: "Lemaire Laurent",
+          url: "https://www.instagram.com/laurent_l.photographies?igsh=MThkOXdtank4cG5law==",
+        },
+        text: [
+          "Outside of tech, I'm passionate about horse riding, an activity I've been practicing since I was young.",
+          "I started with more classical disciplines, including show jumping and dressage, competing at several events including the French Championships. I also discovered mounted archery, a very different discipline that broadened my vision of equestrianism.",
+          "This passion has been a part of me for a long time, and it felt only natural to share it here.",
+        ],
       },
     ],
   },

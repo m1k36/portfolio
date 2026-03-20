@@ -44,6 +44,7 @@ export default function About({ dict }: Props) {
                 images={imagesByRow[i]}
                 reverse={i % 2 === 1}
                 imagePlaceholder={dict.imagePlaceholder}
+                photoCredit={card.photoCredit}
               />
             </AnimateOnScroll>
           ))}

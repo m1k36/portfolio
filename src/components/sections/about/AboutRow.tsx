@@ -6,10 +6,11 @@ import { useState, useEffect } from "react";
 type Props = {
   tag: string;
   title: string;
-  text: string;
+  text: string[];
   images: string[];
   reverse?: boolean;
   imagePlaceholder?: string;
+  photoCredit?: { name: string; url: string };
 };
 
 export default function AboutRow({
@@ -19,6 +20,7 @@ export default function AboutRow({
   images,
   reverse = false,
   imagePlaceholder = "…",
+  photoCredit,
 }: Props) {
   const [index, setIndex] = useState(0);
   const hasImages = images.length > 0;
@@ -88,13 +90,30 @@ export default function AboutRow({
             </div>
           )}
         </div>
+        {hasImages && photoCredit && (
+          <p className="mt-2 text-right text-xs text-zinc-500 font-mono">
+            © Photo :{" "}
+            <a
+              href={photoCredit.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-zinc-300 transition-colors"
+            >
+              {photoCredit.name}
+            </a>
+          </p>
+        )}
       </div>
 
       {/* Text */}
       <div className="w-full md:w-1/2 flex flex-col gap-3">
         <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">{tag}</span>
         <h3 className="text-2xl font-bold">{title}</h3>
-        <p className="text-zinc-400 leading-relaxed">{text}</p>
+        {text.map((item, index) => (
+          <p key={index} className="text-zinc-400 leading-relaxed">
+            {item}
+          </p>
+        ))}
       </div>
     </div>
   );

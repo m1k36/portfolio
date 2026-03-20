@@ -8,6 +8,8 @@ import {
 import type { Dictionary } from "@/src/lib/i18n";
 import { ICON_MAP } from "@/src/lib/constant";
 
+const STAGGER_DELAY_MS = 80;
+
 type Props = { dict: Dictionary["projects"] };
 
 export default function Projects({ dict }: Props) {
@@ -21,7 +23,7 @@ export default function Projects({ dict }: Props) {
 
         <Accordion type="single" collapsible className="w-full">
           {dict.items.map((project, i) => (
-            <AnimateOnScroll key={project.title} delay={i * 80}>
+            <AnimateOnScroll key={project.title} delay={i * STAGGER_DELAY_MS}>
               <AccordionItem
                 value={`project-${i}`}
                 className="border-t border-zinc-800 last:border-b border-b-0"

@@ -14,7 +14,8 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
   const router = useRouter();
 
   const switchTo = (lang: string) => {
-    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${lang}`);
+    const localeCodes = LOCALES.map((l) => l.code).join("|");
+    const newPath = pathname.replace(new RegExp(`^\\/(${localeCodes})`), `/${lang}`);
     router.push(newPath);
   };
 
@@ -23,7 +24,10 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
       {LOCALES.map(({ code, Flag }) => (
         <button
           key={code}
+          type="button"
           onClick={() => switchTo(code)}
+          aria-label={`Switch to ${code.toUpperCase()}`}
+          aria-current={currentLang === code ? "true" : undefined}
           title={code.toUpperCase()}
           className={`transition-opacity ${
             currentLang === code ? "opacity-100" : "opacity-40 hover:opacity-80"

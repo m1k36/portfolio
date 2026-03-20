@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+const CAROUSEL_INTERVAL_MS = 5000;
+
 type Props = {
   tag: string;
   title: string;
@@ -30,7 +32,7 @@ export default function AboutRow({
     if (!hasMultiple) return;
     const timer = setTimeout(() => {
       setIndex((i) => (i + 1) % images.length);
-    }, 5000);
+    }, CAROUSEL_INTERVAL_MS);
     return () => clearTimeout(timer);
   }, [index, images.length, hasMultiple]);
 
@@ -49,7 +51,7 @@ export default function AboutRow({
                 <Image
                   key={i}
                   src={src}
-                  alt={title}
+                  alt={`${title} — photo ${i + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-opacity duration-700"
@@ -59,23 +61,33 @@ export default function AboutRow({
               {hasMultiple && (
                 <>
                   <button
+                    type="button"
                     onClick={() => navigate(index - 1)}
                     className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/75 text-white rounded-full w-7 h-7 flex items-center justify-center transition-colors"
-                    aria-label="Previous"
+                    aria-label="Photo précédente"
                   >
                     ‹
                   </button>
                   <button
+                    type="button"
                     onClick={() => navigate(index + 1)}
                     className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/75 text-white rounded-full w-7 h-7 flex items-center justify-center transition-colors"
-                    aria-label="Next"
+                    aria-label="Photo suivante"
                   >
                     ›
                   </button>
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 flex gap-1">
+                  <div
+                    className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 flex gap-1"
+                    role="tablist"
+                    aria-label="Sélecteur de photo"
+                  >
                     {images.map((_, i) => (
                       <button
+                        type="button"
                         key={i}
+                        role="tab"
+                        aria-selected={i === index}
+                        aria-label={`Photo ${i + 1}`}
                         onClick={() => setIndex(i)}
                         className={`w-1.5 h-1.5 rounded-full transition-colors ${i === index ? "bg-white" : "bg-white/40"}`}
                       />

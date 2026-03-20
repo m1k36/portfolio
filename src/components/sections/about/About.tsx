@@ -18,12 +18,19 @@ function getImages(folder: string): string[] {
       .filter((f) => IMAGE_EXTENSIONS.test(f))
       .sort()
       .map((f) => `/images/about/${folder}/${f}`);
-  } catch {
+  } catch (err) {
+    console.error(`[About] Failed to read images from "${folder}":`, err);
     return [];
   }
 }
 
 export default function About({ dict }: Props) {
+  if (dict.cards.length !== FOLDERS.length) {
+    console.error(
+      `[About] Mismatch: ${dict.cards.length} cards but ${FOLDERS.length} image folders. Check FOLDERS and dict.cards order.`
+    );
+  }
+
   const imagesByRow = FOLDERS.map(getImages);
 
   return (
@@ -41,7 +48,7 @@ export default function About({ dict }: Props) {
                 tag={card.tag}
                 title={card.title}
                 text={card.text}
-                images={imagesByRow[i]}
+                images={imagesByRow[i] ?? []}
                 reverse={i % 2 === 1}
                 imagePlaceholder={dict.imagePlaceholder}
                 photoCredit={card.photoCredit}

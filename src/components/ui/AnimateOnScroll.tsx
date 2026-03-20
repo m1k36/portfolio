@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
+const INTERSECTION_THRESHOLD = 0.15;
+
 export default function AnimateOnScroll({
   children,
   className = "",
@@ -12,6 +14,8 @@ export default function AnimateOnScroll({
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const delayRef = useRef(delay);
+  delayRef.current = delay;
 
   useEffect(() => {
     const el = ref.current;
@@ -20,17 +24,17 @@ export default function AnimateOnScroll({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.transitionDelay = `${delay}ms`;
+          el.style.transitionDelay = `${delayRef.current}ms`;
           el.classList.add("animate-in");
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15 }
+      { threshold: INTERSECTION_THRESHOLD }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [delay]);
+  }, []);
 
   return (
     <div ref={ref} className={`animate-hidden ${className}`}>

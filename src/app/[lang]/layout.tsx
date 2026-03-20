@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/src/app/globals.css";
 import Header from "@/src/components/header/Header";
 import { getDictionary } from "@/src/lib/i18n";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -25,6 +26,7 @@ export default async function LangLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header nav={dict.nav} lang={lang} />
         {children}
+        <Analytics />
       </body>
     </html>
   );

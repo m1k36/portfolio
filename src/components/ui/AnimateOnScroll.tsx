@@ -14,8 +14,6 @@ export default function AnimateOnScroll({
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const delayRef = useRef(delay);
-  delayRef.current = delay;
 
   useEffect(() => {
     const el = ref.current;
@@ -24,7 +22,7 @@ export default function AnimateOnScroll({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.transitionDelay = `${delayRef.current}ms`;
+          el.style.transitionDelay = `${delay}ms`;
           el.classList.add("animate-in");
           observer.unobserve(el);
         }
@@ -34,7 +32,7 @@ export default function AnimateOnScroll({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [delay]);
 
   return (
     <div ref={ref} className={`animate-hidden ${className}`}>

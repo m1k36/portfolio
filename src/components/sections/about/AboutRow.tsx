@@ -25,8 +25,28 @@ export default function AboutRow({
   photoCredit,
 }: Props) {
   const [index, setIndex] = useState(0);
+  const [dimensions, setDimensions] = useState<{ width: number; height: number }[]>([]);
   const hasImages = images.length > 0;
   const hasMultiple = images.length > 1;
+
+  // Charge les dimensions naturelles de chaque image
+  useEffect(() => {
+    const loadDimensions = async () => {
+      const dims = await Promise.all(
+        images.map(
+          (src) =>
+            new Promise<{ width: number; height: number }>((resolve) => {
+              const img = new window.Image();
+              img.onload = () => resolve({ width: img.naturalWidth, height: img.naturalHeight });
+              img.onerror = () => resolve({ width: 4, height: 3 }); // fallback ratio
+              img.src = src;
+            })
+        )
+      );
+      setDimensions(dims);
+    };
+    if (hasImages) loadDimensions();
+  }, [images, hasImages]);
 
   useEffect(() => {
     if (!hasMultiple) return;
@@ -38,13 +58,20 @@ export default function AboutRow({
 
   const navigate = (next: number) => setIndex((next + images.length) % images.length);
 
+  // Ratio de l'image courante (fallback 4/3)
+  const currentDim = dimensions[index];
+  const paddingBottom = currentDim ? `${(currentDim.height / currentDim.width) * 100}%` : "75%"; // 4/3 par défaut
+
   return (
     <div
       className={`flex flex-col md:flex-row items-center gap-10 md:gap-16 ${reverse ? "md:flex-row-reverse" : ""}`}
     >
       {/* Images */}
       <div className="w-full md:w-1/2 shrink-0">
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-800">
+        <div
+          className="relative w-full rounded-2xl overflow-hidden bg-zinc-800 transition-all duration-500"
+          style={{ paddingBottom }}
+        >
           {hasImages ? (
             <>
               {images.map((src, i) => (
